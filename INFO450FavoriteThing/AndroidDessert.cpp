@@ -13,15 +13,6 @@ AndroidDessert::AndroidDessert()
 	hasSecurityPatchSupport = NULL;
 }
 
-AndroidDessert::AndroidDessert(string a, double b, int c, int d, bool e)
-{
-	versionCodeName = a;
-	versionNumber = b;
-	versionApiLevel = c;
-	versionReleaseYear = d;
-	hasSecurityPatchSupport = e;
-}
-
 AndroidDessert::~AndroidDessert()
 {
 }
@@ -120,12 +111,11 @@ int AndroidDessert::enterDessert()
 //overloaded function which displays dessert to teh console
 ostream & operator<<(ostream &os, const AndroidDessert &dessert)
 {
-	string debugInfo = "";
 	os << "Code Name: " << dessert.versionCodeName << endl;
 	os << "Version #: " << dessert.versionNumber << endl;
 	os << "API Level: " << dessert.versionApiLevel << endl;
 	os << "Release Year: " << dessert.versionReleaseYear << endl;
 	os << "Security Patches Supported? " << dessert.hasSecurityPatchSupport << endl;
-	return os << debugInfo;
+	return os;
 }
 
