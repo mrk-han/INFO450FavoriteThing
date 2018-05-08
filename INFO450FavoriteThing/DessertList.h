@@ -11,7 +11,7 @@ protected:
 
 public:
 	DessertList();
+	void displayList();
 	int addDessert();
 	bool isDuplicateEntry(AndroidDessert dessert);
-	void displayList();
 };

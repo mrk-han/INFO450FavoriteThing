@@ -19,32 +19,34 @@ bool DessertList::isDuplicateEntry(AndroidDessert dessert)
 	{
 		if ((dessert.getApiLevel() == dList[i].getApiLevel()) && (dessert.getReleaseYear() == dList[i].getReleaseYear()))
 		{
-			cout << "You have already entered an Android Version with this API Level and release year" << endl;
-
 			return true;
 		}
 	}
 	return false;
 }
 
+// create new dessert and ask user to populate variables
 int DessertList::addDessert()
 {
 	AndroidDessert newDessert;
 	newDessert.enterDessert();
 	if (isDuplicateEntry(newDessert))
 	{
-		cout << "Deleting the previous entry AND the duplicate entry. Re-enter if this was a mistake" << endl;
+		cout << "You have already entered an Android Version with this API Level and release year" << endl;
+		cout << "Deleting this entry so you still have this first, but won't have two identical." << endl;
 		newDessert.~AndroidDessert();
 		return 0;
 	}
 	else
 	{
+		// sets object to current point in for loop then goes to the next point in the array
 		dList[listSize] = newDessert;
 		listSize++;
 		return 0;
 	}
 }
 
+// displays every object in array
 void DessertList::displayList()
 {
 	int i;

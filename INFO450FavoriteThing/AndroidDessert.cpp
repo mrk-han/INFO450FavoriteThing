@@ -74,22 +74,31 @@ int AndroidDessert::enterDessert()
 	{
 	case 2008 :
 		hasSecurityPatchSupport = false;
+		break;
 	case 2009 :
 		hasSecurityPatchSupport = false;
+		break;
 	case 2010 :
 		hasSecurityPatchSupport = false;
+		break;
 	case 2011 : 
 		hasSecurityPatchSupport = false;
+		break;
 	case 2012 :
 		hasSecurityPatchSupport = false;
+		break;
 	case 2013 :
 		hasSecurityPatchSupport = false;
+		break;
 	case 2014 :
 		hasSecurityPatchSupport = false;
+		break;
 	case 2015 :
 		hasSecurityPatchSupport = true;
+		break;
 	case 2016 : 
 		hasSecurityPatchSupport = true;
+		break;
 	case 2017 :
 		hasSecurityPatchSupport = true;
 		break;
@@ -111,11 +120,20 @@ int AndroidDessert::enterDessert()
 //overloaded function which displays dessert to teh console
 ostream & operator<<(ostream &os, const AndroidDessert &dessert)
 {
-	os << "Code Name: " << dessert.versionCodeName << endl;
+	string x;
+	if (dessert.hasSecurityPatchSupport)
+	{
+		x = "Supported.";
+	}
+	else
+	{
+		x = "Not Supported";
+	}
+	os << "Android Dessert: " << dessert.versionCodeName << endl;
 	os << "Version #: " << dessert.versionNumber << endl;
 	os << "API Level: " << dessert.versionApiLevel << endl;
 	os << "Release Year: " << dessert.versionReleaseYear << endl;
-	os << "Security Patches Supported? " << dessert.hasSecurityPatchSupport << endl;
+	os << "Security Patches Supported? " << x << endl;
 	return os;
 }
 
