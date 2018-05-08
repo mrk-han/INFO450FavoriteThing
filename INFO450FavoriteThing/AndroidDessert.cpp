@@ -10,7 +10,7 @@ AndroidDessert::AndroidDessert()
 	versionNumber = 0;
 	versionApiLevel = 0;
 	versionReleaseYear = 0;
-	hasSecurityPatchSupport = true;
+	hasSecurityPatchSupport = NULL;
 }
 
 AndroidDessert::AndroidDessert(string a, double b, int c, int d, bool e)

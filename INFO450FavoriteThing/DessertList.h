@@ -4,13 +4,13 @@
 
 class DessertList
 {
-private:
-	AndroidDessert iList[100];
+protected:
+	AndroidDessert dList[100];
 	int listSize;
 
 public:
 	DessertList();
 	void displayList();
-	int addDessert(AndroidDessert &dessert);
-	bool duplicateEntryFlow(int api, int releaseYear);
+	int addDessert();
+	bool isDuplicateEntry(AndroidDessert dessert);
 };

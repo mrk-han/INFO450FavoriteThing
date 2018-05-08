@@ -8,7 +8,7 @@ const int BAD_USER_INPUT = 808;
 
 class AndroidDessert
 {
-private:
+protected:
 
 	string versionCodeName;
 	double versionNumber;
